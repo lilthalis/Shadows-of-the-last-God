@@ -6,32 +6,47 @@ body {
   font-family: 'Cinzel Decorative', serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('fundo-dark.jpg'); /* Pode trocar pela sua imagem */
+  background-image: url('fundo-dark.jpg'); /* Altere se tiver uma imagem sua */
   background-size: cover;
   background-position: center;
 }
 
 .container {
   text-align: center;
-  background: rgba(0, 0, 0, 0.6);
   padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 40px auto;
+  max-width: 800px;
   border-radius: 12px;
   box-shadow: 0 0 20px #5c1a1a;
 }
 
-.intro h1 {
-  font-size: 28px;
-  margin-bottom: 30px;
+#typewriter {
+  font-size: 24px;
   color: #ffdddd;
   text-shadow: 1px 1px 10px #3a0e0e;
+  margin-bottom: 30px;
+}
+
+section {
+  margin-top: 40px;
+}
+
+section h2 {
+  font-size: 28px;
+  color: #f2b705;
+  margin-bottom: 10px;
+}
+
+section p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 .discord-button {
   display: inline-block;
+  margin-top: 50px;
   padding: 12px 24px;
   font-size: 16px;
   background-color: #5865F2;
