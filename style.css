@@ -1,73 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'UnifrakturCook', serif;
   background-color: #000;
   color: #ccc;
+  font-family: 'UnifrakturCook', serif;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
   min-height: 100vh;
+  overflow-x: hidden;
   z-index: 1;
-}
-
-h1, h2, h3, p {
-  margin: 30px auto;
-  padding: 0 20px;
-  max-width: 900px;
-  line-height: 1.6;
 }
 
 h1 {
   font-size: 3em;
-  color: #fff;
   text-align: center;
   margin-top: 60px;
-  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.2em;
   color: #aaa;
   text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-top: 40px;
 }
 
 h3 {
-  font-size: 1.5em;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(255,255,255,0.2);
+  font-size: 1.6em;
+  color: #eee;
+  margin-top: 50px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.1);
 }
 
 p {
+  max-width: 900px;
+  margin: 20px auto;
   font-size: 1.1em;
-  color: #ccc;
+  line-height: 1.7;
+  padding: 0 20px;
   text-align: justify;
+  color: #ccc;
 }
 
-/* BOTÃO DISCORD */
+/* Botão Discord */
 a {
   display: block;
   text-align: center;
-  margin: 40px auto;
+  margin: 60px auto;
   background-color: #5b4bff;
-  color: #fff;
+  color: white;
   padding: 15px 30px;
-  border-radius: 12px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1em;
   box-shadow: 0 0 20px #5b4bff;
-  transition: background-color 0.3s, transform 0.2s;
-  width: max-content;
+  transition: all 0.3s ease;
+  width: fit-content;
 }
 
 a:hover {
-  background-color: #4430cc;
+  background-color: #3d33b3;
   transform: scale(1.05);
 }
 
-/* FUNDO DE NÉVOA */
+/* Névoa */
 .fog-container {
   position: fixed;
   top: 0;
@@ -91,8 +90,6 @@ a:hover {
 }
 
 .fog2 {
-  top: auto;
-  bottom: 0;
   animation: fogMoveReverse 240s linear infinite;
   opacity: 0.07;
 }
@@ -107,7 +104,7 @@ a:hover {
   100% { transform: translateX(0); }
 }
 
-/* FADE-IN */
+/* Fade-in */
 .fade-in {
   animation: fadeIn 2s ease-in forwards;
   opacity: 0;
@@ -118,3 +115,4 @@ a:hover {
     opacity: 1;
   }
 }
+
