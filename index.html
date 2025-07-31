@@ -1,63 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shadows of the Last God</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Shadows of the Last God</h1>
-    <nav>
-  <ul>
-    <li><a href="#inicio">Início</a></li>
-    <li><a href="#lenda">A Lenda</a></li>
-    <li><a href="#colossos">Colossos</a></li>
-    <li><a href="#explorar">Explorar</a></li>
-    <li><a href="#discord">Discord</a></li>
-  </ul>
-</nav>
-  </header>
+  <div class="container">
+    <div class="intro">
+      <h1 id="typewriter"></h1>
+      <a class="discord-button" href="https://discord.gg/ZxfhdGZb" target="_blank">Entrar no Reino (Discord)</a>
+    </div>
+  </div>
 
-  <main>
-    <section id="lenda">
-      <h2>A Lenda</h2>
-      <p>
-        Dizem que o Último Deus caiu dos céus numa chuva de cinzas, amaldiçoando a terra e os povos com a sua ruína.
-        Sua queda rasgou o véu entre os mundos, libertando sombras ancestrais que nunca deveriam ter despertado. 
-        Agora, tudo que resta são ruínas engolidas pela névoa e orações esquecidas.
-      </p>
-    </section>
-
-    <section id="colossos">
-      <h2>Colossos</h2>
-      <p>
-        Os Colossos são criaturas titânicas, moldadas com fragmentos do poder divino corrompido.
-        Eles vagam pelas planícies desoladas, guardando templos partidos e selos enfraquecidos.
-        Apenas os bravos — ou os tolos — ousam enfrentá-los, pois cada um guarda um pedaço da verdade.
-      </p>
-    </section>
-
-    <section id="explorar">
-      <h2>Explorar</h2>
-      <p>
-        Vasculhe as terras quebradas em busca de relíquias, mapas antigos e ecos de um mundo esquecido.
-        As ruínas falam com quem escuta... e gritam para quem não deveria ter vindo.
-        Há muito mais do que pedras e poeira esperando sob o solo negro.
-      </p>
-    </section>
-
-    <section id="discord">
-      <h2>Comunidade</h2>
-      <p>
-        <em>Em breve, os portões do Discord da Ordem Sombria serão abertos.</em><br><br>
-        <a class="discord-btn" href="#" target="_blank">Entrar no Discord</a>
-      </p>
-    </section>
-  </main>
-
+  <script>
+    const text = "Os portões da Névoa Negra se abriram... Entre por sua conta e risco, forasteiro.";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
+
 
