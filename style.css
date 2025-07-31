@@ -1,64 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
-
-body {
-  background-color: #0d0d0d;
-  color: #e5e5e5;
-  font-family: 'Cinzel Decorative', serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('fundo-dark.jpg'); /* Altere se tiver uma imagem sua */
-  background-size: cover;
-  background-position: center;
+/* Linha de separação entre seções */
+.divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #222, #ff0000, #222);
+  margin: 40px 0;
 }
 
-.container {
-  text-align: center;
-  padding: 40px;
-  background: rgba(0, 0, 0, 0.6);
-  margin: 40px auto;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #5c1a1a;
+/* Névoa de fundo sutil */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.08;
+  z-index: -1;
+  pointer-events: none;
 }
 
-#typewriter {
-  font-size: 24px;
-  color: #ffdddd;
-  text-shadow: 1px 1px 10px #3a0e0e;
-  margin-bottom: 30px;
+/* Efeito Glitch em títulos ou textos destacados */
+.glitch {
+  position: relative;
+  color: #f1c40f;
+  animation: glitch 1s infinite;
 }
 
-section {
-  margin-top: 40px;
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red, -2px 0 blue; }
+  20% { text-shadow: -2px -1px red, 2px 1px blue; }
+  40% { text-shadow: 2px 2px red, -2px -2px blue; }
+  60% { text-shadow: -1px 2px red, 1px -2px blue; }
+  80% { text-shadow: 1px 1px red, -1px -1px blue; }
+  100% { text-shadow: 0 0 red, 0 0 blue; }
 }
 
-section h2 {
-  font-size: 28px;
-  color: #f2b705;
-  margin-bottom: 10px;
+/* Efeito ao passar o mouse por cima das palavras (títulos) */
+h2:hover, h3:hover, h1:hover {
+  color: #ff0000;
+  text-shadow: 0 0 5px red, 0 0 10px crimson;
+  transition: all 0.3s ease-in-out;
 }
 
-section p {
-  font-size: 17px;
-  line-height: 1.6;
-  color: #ddd;
-}
-
+/* Botão do Discord (se quiser estilizar mais) */
 .discord-button {
-  display: inline-block;
-  margin-top: 50px;
-  padding: 12px 24px;
-  font-size: 16px;
   background-color: #5865F2;
   color: white;
+  padding: 12px 24px;
   border: none;
-  border-radius: 10px;
-  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
   box-shadow: 0 0 10px #5865F2;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .discord-button:hover {
-  background-color: #404eed;
-  box-shadow: 0 0 15px #8ea1f5;
+  background-color: #4752C4;
+  box-shadow: 0 0 20px #5865F2;
 }
