@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Shadows of the Last God</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <!-- FRASE DE EFEITO -->
-    <h1 id="typewriter"></h1>
+<body class="fade-in">
 
-    <!-- HISTÓRIA PRINCIPAL -->
-    <section class="historia">
-      <h2>Shadows of the Last God</h2>
-      <p>
-        Em um mundo esquecido pelas eras, onde as sombras se arrastam como serpentes famintas, uma lenda ecoa entre ruínas e ecos de dor. O Último Deus caiu — e com ele, a sanidade do mundo. Agora, os poucos sobreviventes vagam por terras amaldiçoadas, corrompidas pelo lamento dos antigos. Você, forasteiro, acaba de cruzar os Portões da Névoa Negra. Aqui não há heróis, apenas escolhas.
-      </p>
-    </section>
-
-    <!-- A LENDA -->
-    <section class="lenda">
-      <h2>A Lenda</h2>
-      <p>
-        Dizem que o Último Deus foi traído por seus próprios servos e lançado nas trevas eternas. Seu coração corrompido ainda pulsa sob as ruínas do mundo, atraindo os desgraçados, os esquecidos... e os curiosos. Aqueles que ousam buscar respostas, encontram apenas ecos e delírios.
-      </p>
-    </section>
-
-    <!-- A SOMBRA DO ÚLTIMO DEUS -->
-    <section class="sombra">
-      <h2>A Sombra do Último Deus</h2>
-      <p>
-        Uma entidade sem forma definida, feita da culpa e do medo de eras passadas. A Sombra vagueia por entre as montanhas desfeitas, consumindo tudo o que guarda lembrança, identidade ou esperança. Encontrá-la é como encarar o próprio fim – ou o recomeço distorcido.
-      </p>
-    </section>
-
-    <!-- OS COLOSSOS -->
-    <section class="colossos">
-      <h2>Colossos</h2>
-      <p>
-        Criaturas ancestrais deixadas para proteger as chaves do mundo esquecido. Alguns caminham como montanhas vivas; outros rastejam sob a terra como veneno latente. Derrotar um colosso é um ato de glória... ou de desespero.
-      </p>
-    </section>
-
-    <!-- EXPLORAR -->
-    <section class="explorar">
-      <h2>Explorar</h2>
-      <p>
-        Mapas ocultos, trilhas de sangue, visões distorcidas do tempo. Em "Shadows of the Last God", explorar é sobreviver – mas também é lembrar. E às vezes, lembrar é a pior maldição. Você terá coragem de seguir adiante?
-      </p>
-    </section>
-
-    <!-- BOTÃO DO DISCORD -->
-    <a class="discord-button" href="https://discord.gg/ZxfhdGZb" target="_blank">Entrar no Reino (Discord)</a>
+  <!-- NÉVOA -->
+  <div class="fog-container">
+    <div class="fog"></div>
+    <div class="fog fog2"></div>
   </div>
 
-  <!-- SCRIPT DE DIGITAÇÃO -->
-  <script>
-    const text = "Os portões da Névoa Negra se abriram... Entre por sua conta e risco, forasteiro.";
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 50);
-      }
-    }
-    window.onload = typeWriter;
-  </script>
+  <h1>Os portões da Névoa Negra se abriram... Entre po</h1>
+
+  <h2>Shadows of the Last God</h2>
+  <p>Em um mundo esquecido pelas eras, onde as sombras se arrastam como serpentes famintas, uma lenda ecoa entre ruínas e ecos de dor. O Último Deus caiu — e com ele, a sanidade do mundo. Agora, os poucos sobreviventes vagam por terras amaldiçoadas, corrompidas pelo lamento dos antigos. Você, forasteiro, acaba de cruzar os Portões da Névoa Negra. Aqui não há heróis, apenas escolhas.</p>
+
+  <h3 class="fade-in" style="color: red; text-shadow: 0 0 10px red;">A Lenda</h3>
+  <p>Dizem que o Último Deus foi traído por seus próprios servos e lançado nas trevas eternas. Seu coração corrompido ainda pulsa sob as ruínas do mundo, atraindo os desgraçados, os esquecidos... e os curiosos. Aqueles que ousam buscar respostas, encontram apenas ecos e delírios.</p>
+
+  <h3>A Sombra do Último Deus</h3>
+  <p>Uma entidade sem forma definida, feita da culpa e do medo de eras passadas. A Sombra vagueia por entre as montanhas desfeitas, consumindo tudo o que guarda lembrança, identidade ou esperança. Encontrá-la é como encarar o próprio fim – ou o recomeço distorcido.</p>
+
+  <h3>Colossos</h3>
+  <p>Criaturas ancestrais deixadas para proteger as chaves do mundo esquecido. Alguns caminham como montanhas vivas; outros rastejam sob a terra como veneno latente. Derrotar um colosso é um ato de glória... ou de desespero.</p>
+
+  <h3>Explorar</h3>
+  <p>Mapas ocultos, trilhas de sangue, visões distorcidas do tempo. Em "Shadows of the Last God", explorar é sobreviver – mas também é lembrar. E às vezes, lembrar é a pior maldição. Você terá coragem de seguir adiante?</p>
+
+  <!-- BOTÃO DISCORD -->
+  <a href="https://discord.gg/seulink" target="_blank" style="background-color:#5b4bff; color:#fff; padding:12px 24px; border-radius:12px; text-decoration:none; font-weight:bold; box-shadow:0 0 12px #5b4bff;">
+    Entrar no Reino (Discord)
+  </a>
+
 </body>
 </html>
