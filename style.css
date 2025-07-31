@@ -1,79 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
 
 body {
-  background-color: #0b0b0b;
-  color: #f0f0f0;
-  font-family: 'Georgia', serif;
-  line-height: 1.7;
+  background-color: #0d0d0d;
+  color: #e5e5e5;
+  font-family: 'Cinzel Decorative', serif;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
-}
-
-header {
-  background-color: #111;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #333;
-}
-
-header h1 {
-  font-family: 'UnifrakturCook', cursive;
-  font-size: 36px;
-  color: #e6b800;
-  margin: 0;
-  letter-spacing: 2px;
-}
-
-nav ul {
   display: flex;
   justify-content: center;
-  list-style: none;
-  margin-top: 15px;
-  padding: 0;
-  gap: 40px;
+  align-items: center;
+  height: 100vh;
+  background-image: url('fundo-dark.jpg'); /* Pode trocar pela sua imagem */
+  background-size: cover;
+  background-position: center;
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s ease;
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #5c1a1a;
 }
 
-nav ul li a:hover {
-  color: #e6b800;
-  text-shadow: 0 0 5px #e6b800;
-}
-
-main {
-  padding: 40px 80px;
-}
-
-section {
-  margin-bottom: 80px;
-  border-left: 3px solid #444;
-  padding-left: 20px;
-}
-
-section h2 {
-  font-family: 'UnifrakturCook', cursive;
+.intro h1 {
   font-size: 28px;
-  color: #e6b800;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  color: #ffdddd;
+  text-shadow: 1px 1px 10px #3a0e0e;
 }
 
-.discord-btn {
+.discord-button {
   display: inline-block;
-  padding: 12px 20px;
-  background: #7289da;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #5865F2;
   color: white;
+  border: none;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background 0.3s ease;
+  box-shadow: 0 0 10px #5865F2;
+  transition: 0.3s;
 }
 
-.discord-btn:hover {
-  background: #5b6eae;
+.discord-button:hover {
+  background-color: #404eed;
+  box-shadow: 0 0 15px #8ea1f5;
 }
