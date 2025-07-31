@@ -1,81 +1,120 @@
-/* Fonte medieval (coloque a tag <link> no <head> do HTML também) */
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:700&display=swap');
-
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Georgia', serif;
   margin: 0;
-  padding: 0 20px;
-  cursor: url('https://cur.cursors-4u.net/games/gam-13/gam1222.cur'), auto;
+  padding: 0;
+  font-family: 'UnifrakturCook', serif;
+  background-color: #000;
+  color: #ccc;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
   z-index: 1;
 }
 
-h1, h2, h3 {
-  font-family: 'UnifrakturCook', cursive;
-  color: #ffcc00;
-  text-shadow: 2px 2px 6px rgba(255, 204, 0, 0.3);
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
+h1, h2, h3, p {
+  margin: 30px auto;
+  padding: 0 20px;
+  max-width: 900px;
+  line-height: 1.6;
 }
 
-h1:hover, h2:hover, h3:hover {
-  transform: scale(1.03);
-  text-shadow: 0 0 12px #ffd700, 0 0 20px #ffa500;
+h1 {
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  margin-top: 60px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+h2 {
+  font-size: 2em;
+  color: #aaa;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.5em;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255,255,255,0.2);
 }
 
 p {
-  line-height: 1.6;
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #ccc;
+  text-align: justify;
 }
 
-/* Animação fade-in */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease-out forwards;
+/* BOTÃO DISCORD */
+a {
+  display: block;
+  text-align: center;
+  margin: 40px auto;
+  background-color: #5b4bff;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 20px #5b4bff;
+  transition: background-color 0.3s, transform 0.2s;
+  width: max-content;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+a:hover {
+  background-color: #4430cc;
+  transform: scale(1.05);
 }
 
-/* Névoa animada */
+/* FUNDO DE NÉVOA */
 .fog-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .fog, .fog2 {
   position: absolute;
-  width: 200%;
-  height: 200%;
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 100%;
   background: url('https://i.imgur.com/8V1Zk7Q.png') repeat;
-  animation: moveFog 120s linear infinite;
-  opacity: 0.08;
-  filter: blur(8px);
+  opacity: 0.05;
+  animation: fogMove 180s linear infinite;
 }
 
 .fog2 {
-  animation: moveFog2 200s linear infinite;
-  opacity: 0.05;
+  top: auto;
+  bottom: 0;
+  animation: fogMoveReverse 240s linear infinite;
+  opacity: 0.07;
 }
 
-@keyframes moveFog {
-  0% { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(-50%) translateY(-10%); }
+@keyframes fogMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-@keyframes moveFog2 {
-  0% { transform: translateX(0) translateY(0); }
-  100% { transform: translateX(-20%) translateY(10%); }
+@keyframes fogMoveReverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+/* FADE-IN */
+.fade-in {
+  animation: fadeIn 2s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
