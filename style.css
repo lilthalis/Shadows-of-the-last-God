@@ -1,118 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook&display=swap');
-
+/* Estilo base do corpo da página */
 body {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #ccc;
-  font-family: 'UnifrakturCook', serif;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-  z-index: 1;
-}
-
-h1 {
-  font-size: 3em;
-  text-align: center;
-  margin-top: 60px;
-  color: #fff;
-  text-shadow: 0 0 15px rgba(255,255,255,0.2);
-}
-
-h2 {
-  font-size: 2.2em;
-  color: #aaa;
-  text-align: center;
-  margin-top: 40px;
-}
-
-h3 {
-  font-size: 1.6em;
-  color: #eee;
-  margin-top: 50px;
-  text-shadow: 0 0 5px rgba(255,255,255,0.1);
-}
-
-p {
-  max-width: 900px;
-  margin: 20px auto;
-  font-size: 1.1em;
-  line-height: 1.7;
-  padding: 0 20px;
-  text-align: justify;
-  color: #ccc;
-}
-
-/* Botão Discord */
-a {
-  display: block;
-  text-align: center;
-  margin: 60px auto;
-  background-color: #5b4bff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: white;
-  padding: 15px 30px;
-  border-radius: 10px;
-  text-decoration: none;
+  background-color: #0b0b0b;
+  background-image: url('fundo-dark.png'); /* Troque pelo seu fundo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Centralização de conteúdo geral */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Botão com efeito neon */
+.botao-reino {
+  background: linear-gradient(145deg, #5f1cff, #7e4dfb);
+  color: white;
   font-weight: bold;
-  font-size: 1.1em;
-  box-shadow: 0 0 20px #5b4bff;
-  transition: all 0.3s ease;
-  width: fit-content;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 20px #7e4dfb;
+  transition: 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  text-decoration: none;
 }
 
-a:hover {
-  background-color: #3d33b3;
+.botao-reino:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 30px #b983ff, 0 0 10px #fff;
 }
 
-/* Névoa */
-.fog-container {
+/* Título ou cabeçalho */
+.titulo {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #d2bfff;
+  text-shadow: 0 0 15px #6c00ff;
+}
+
+/* Imagens ou ícones flutuantes (como símbolo, espada, olho etc.) */
+.simbolo-flutuante {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  opacity: 0.7;
+  animation: pulsar 3s infinite;
 }
 
-.fog, .fog2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300%;
-  height: 100%;
-  background: url('https://i.imgur.com/8V1Zk7Q.png') repeat;
-  opacity: 0.05;
-  animation: fogMove 180s linear infinite;
-}
-
-.fog2 {
-  animation: fogMoveReverse 240s linear infinite;
-  opacity: 0.07;
-}
-
-@keyframes fogMove {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-@keyframes fogMoveReverse {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-/* Fade-in */
-.fade-in {
-  animation: fadeIn 2s ease-in forwards;
-  opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
+/* Animação de pulsar */
+@keyframes pulsar {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
     opacity: 1;
   }
 }
-
