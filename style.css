@@ -1,66 +1,69 @@
-/* Estilo base do corpo da página */
+/* Fundo sombrio com imagem */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  background-color: #0b0b0b;
-  background-image: url('fundo-dark.png'); /* Troque pelo seu fundo */
+  font-family: 'Georgia', serif;
+  background-color: #0a0a0a;
+  background-image: url('fundo-dark.png'); /* Substitua pelo seu arquivo */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  color: #e6e6e6;
+  line-height: 1.6;
 }
 
-/* Centralização de conteúdo geral */
+/* Container centralizado */
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  text-align: center;
-}
-
-/* Botão com efeito neon */
-.botao-reino {
-  background: linear-gradient(145deg, #5f1cff, #7e4dfb);
-  color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 15px 30px;
-  border: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #1c1c1c;
   border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 0 20px #7e4dfb;
-  transition: 0.3s ease;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  text-decoration: none;
+  box-shadow: 0 0 20px rgba(118, 0, 255, 0.3);
 }
 
-.botao-reino:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #b983ff, 0 0 10px #fff;
-}
-
-/* Título ou cabeçalho */
-.titulo {
-  font-size: 2.5rem;
+/* Título principal */
+h1 {
+  font-size: 2.8rem;
+  color: #d3bfff;
+  text-align: center;
   margin-bottom: 40px;
-  color: #d2bfff;
-  text-shadow: 0 0 15px #6c00ff;
+  text-shadow: 0 0 10px #6e00ff;
 }
 
-/* Imagens ou ícones flutuantes (como símbolo, espada, olho etc.) */
+/* Subtítulo (h2, h3 etc.) */
+h2, h3, h4 {
+  color: #ffffff;
+  text-shadow: 0 0 8px #5c2bff;
+  margin-top: 30px;
+}
+
+/* Link estilo dark com toque mágico */
+a {
+  color: #9d7fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px dashed #9d7fff;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #d6c2ff;
+  border-bottom: 1px solid #d6c2ff;
+}
+
+/* Efeito flutuante para ícones ou imagens */
 .simbolo-flutuante {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
   width: 60px;
   opacity: 0.7;
-  animation: pulsar 3s infinite;
+  animation: pulsar 4s infinite;
 }
 
-/* Animação de pulsar */
+/* Animação */
 @keyframes pulsar {
   0%, 100% {
     transform: scale(1);
