@@ -1,75 +1,106 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: 'Cinzel', serif;
+  box-sizing: border-box;
 }
 
-.intro-screen {
-  position: fixed;
+body {
+  background-color: #0d0d0d;
+  color: #eaeaea;
+  font-family: 'Cinzel', serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Container central */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Título principal */
+.intro-title {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #f0f0f0;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.1em;
+  color: #bbbbbb;
+  margin-bottom: 1.5em;
+}
+
+/* Botão */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+.btn:hover {
+  background-color: #ffffff11;
+  box-shadow: 0 0 10px #ffffff44;
+}
+
+/* Fade-in suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Névoa animada */
+.fog, .fog2 {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(#000, #111);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  animation: fadeIn 2s ease-in-out;
-  z-index: 1000;
-  text-align: center;
+  width: 200%;
+  height: 100%;
+  background: url('https://i.ibb.co/7GqnS9n/fog.png') repeat-x;
+  background-size: cover;
+  opacity: 0.08;
+  animation: moveFog 60s linear infinite;
+  pointer-events: none;
 }
 
-.intro-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #c9aaff;
-  text-shadow: 0 0 10px #c9aaff;
+.fog2 {
+  animation: moveFogReverse 90s linear infinite;
+  opacity: 0.12;
 }
 
-.intro-text p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #aaa;
+@keyframes moveFog {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.intro-text button {
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-size: 1rem;
-  border-radius: 4px;
+@keyframes moveFogReverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
 }
-
-.intro-text button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-.hidden {
-  display: none;
-}
-
-h2, h3 {
-  color: #c9aaff;
-}
-
-a {
-  color: #c9aaff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
