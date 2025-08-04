@@ -1,20 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shadows of the Last God</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background-color: #041f26;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      border: 2px solid #fff;
+      color: #fff;
+      background: transparent;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    ul li {
+      list-style: none;
+      margin-bottom: 8px;
+    }
+  </style>
 </head>
 <body>
-  <div class="fog"></div>
-  <div class="fog fog2"></div>
+  <div id="intro" class="fade-in container">
+    <h1>Os Portões da Névoa Negra se abriram...</h1>
+    <p>Shadows of the Last God</p>
+    <button class="btn" onclick="entrarNoReino()">Entrar no Reino</button>
+  </div>
 
-  <main class="container">
-    <h1 class="intro-title">Os Portões da Névoa Negra se Abriram...</h1>
-    <p class="subtitle">Shadows of the Last God</p>
-    <a href="#" class="btn">Entrar no Reino</a>
-  </main>
+  <div id="reino" class="hidden container">
+    <h1>A Lenda do Último Deus</h1>
+    <p>
+      Há muito tempo, antes mesmo da luz tocar as montanhas esquecidas, o Último Deus caminhava entre as sombras.
+      Com ele vieram os Colossus — entidades vivas de pedra e fúria, guardiões de um pacto antigo.
+    </p>
+    <p>
+      Um a um, eles tombaram, selando o próprio Deus em um abismo de névoa. Mas agora, algo despertou.
+      Um chamado ecoa pelas ruínas... E os portões se abriram.
+    </p>
+
+    <h2>Colossos Antigos</h2>
+    <ul>
+      <li>✦ Val’Gorath — O Guardião da Névoa</li>
+      <li>✦ Eryndra — A Rainha de Ossos</li>
+      <li>✦ Morvak — O Devorador de Lamentos</li>
+      <li>✦ Nyros — O Olho da Eternidade</li>
+    </ul>
+
+    <h2>Junte-se à Resistência</h2>
+    <p>Entre em nosso servidor do Discord e lute pela última chama.</p>
+    <a href="https://discord.gg/SEU-LINK-AQUI" target="_blank" class="btn">Entrar no Discord</a>
+  </div>
+
+  <script>
+    function entrarNoReino() {
+      document.getElementById("intro").classList.add("hidden");
+      document.getElementById("reino").classList.remove("hidden");
+    }
+  </script>
 </body>
 </html>
+
