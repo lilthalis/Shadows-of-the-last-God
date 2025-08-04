@@ -1,46 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadows of the Last God</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- INTRO CINEMATOGRÁFICA -->
-  <div class="intro-screen">
-    <div class="intro-text">
-      <h1>Os Portões da Névoa Negra se Abriram...</h1>
-      <p>Shadows of the Last God</p>
-      <button onclick="startSite()">Entrar no Reino</button>
-    </div>
-  </div>
+  <div class="fog"></div>
+  <div class="fog fog2"></div>
 
-  <!-- CONTEÚDO PRINCIPAL (escondido até clicar no botão) -->
-  <div class="main-content hidden">
-    <h2>Shadows of the Last God</h2>
-    <p>Em um mundo esquecido pelas eras...</p>
-
-    <h3>A Lenda</h3>
-    <p>Dizem que o Último Deus foi traído...</p>
-
-    <h3>A Sombra do Último Deus</h3>
-    <p>Uma entidade sem forma definida...</p>
-
-    <h3>Colossos</h3>
-    <p>Criaturas ancestrais deixadas para proteger...</p>
-
-    <h3>Explorar</h3>
-    <p>Mapas ocultos, trilhas de sangue...</p>
-
-    <a href="https://discord.gg/teu-link-aqui" target="_blank">Entrar no Reino (Discord)</a>
-  </div>
-
-  <script>
-    function startSite() {
-      document.querySelector('.intro-screen').style.display = 'none';
-      document.querySelector('.main-content').classList.remove('hidden');
-    }
-</script>
+  <main class="container">
+    <h1 class="intro-title">Os Portões da Névoa Negra se Abriram...</h1>
+    <p class="subtitle">Shadows of the Last God</p>
+    <a href="#" class="btn">Entrar no Reino</a>
+  </main>
 </body>
 </html>
