@@ -1,106 +1,125 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Dark emo vibes */
 body {
+  font-family: 'Courier New', monospace;
   background-color: #0d0d0d;
-  color: #eaeaea;
-  font-family: 'Cinzel', serif;
+  color: #f2f2f2;
+  display: flex;
+}
+
+/* Menu toggle (hamburguer) */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Menu lateral */
+.menu-lateral {
+  width: 240px;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
+  background: #1a1a1a;
+  padding: 30px 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  transition: transform 0.3s ease;
+  z-index: 99;
+  animation: slideIn 1s ease-out;
 }
 
-/* Container central */
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.menu-lateral h2 {
+  color: #fff;
+  margin-bottom: 30px;
   text-align: center;
-  animation: fadeIn 2s ease-in-out;
 }
 
-/* Título principal */
-.intro-title {
-  font-size: 2.8em;
-  font-weight: 700;
-  margin-bottom: 0.5em;
-  color: #f0f0f0;
+.menu-lateral ul {
+  list-style: none;
 }
 
-/* Subtítulo */
-.subtitle {
-  font-size: 1.1em;
-  color: #bbbbbb;
-  margin-bottom: 1.5em;
+.menu-lateral li {
+  margin: 20px 0;
 }
 
-/* Botão */
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 2px solid #ffffff;
-  color: #ffffff;
+.menu-lateral a {
+  color: #ccc;
   text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  background-color: transparent;
+  font-size: 18px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
 }
 
-.btn:hover {
-  background-color: #ffffff11;
-  box-shadow: 0 0 10px #ffffff44;
+.menu-lateral a i {
+  margin-right: 10px;
+  transition: transform 0.3s;
 }
 
-/* Fade-in suave */
+.menu-lateral a:hover {
+  color: #fff;
+}
+
+.menu-lateral a:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* Conteúdo */
+.conteudo {
+  margin-left: 260px;
+  padding: 40px;
+  animation: fadeIn 1s ease-in;
+}
+
+/* Animações */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -60%);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 }
 
-/* Névoa animada */
-.fog, .fog2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background: url('https://i.ibb.co/7GqnS9n/fog.png') repeat-x;
-  background-size: cover;
-  opacity: 0.08;
-  animation: moveFog 60s linear infinite;
-  pointer-events: none;
-}
+/* Responsivo */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 
-.fog2 {
-  animation: moveFogReverse 90s linear infinite;
-  opacity: 0.12;
-}
+  .menu-lateral {
+    transform: translateX(-100%);
+  }
 
-@keyframes moveFog {
-  from {
+  .menu-lateral.aberto {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
-@keyframes moveFogReverse {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(50%);
+  .conteudo {
+    margin-left: 0;
+    padding: 20px;
   }
 }
