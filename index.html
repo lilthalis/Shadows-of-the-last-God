@@ -1,119 +1,136 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shadows of the Last God</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Reset básico */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Cinzel', serif;
     }
 
     body {
-      font-family: 'Cinzel', serif;
-      background-color: #041f26;
-      color: #fff;
-      min-height: 100vh;
+      background: #0b0b0b;
+      color: #e0e0e0;
+      display: flex;
+    }
+
+    /* Menu lateral */
+    nav {
+      width: 220px;
+      height: 100vh;
+      background: #111;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+      padding: 20px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      border-right: 2px solid #333;
     }
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 3s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    .btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      border: 2px solid #fff;
+    nav h1 {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
       color: #fff;
-      background: transparent;
-      text-transform: uppercase;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .container {
       text-align: center;
-      max-width: 800px;
-      padding: 30px;
     }
 
-    h1, h2 {
-      margin-bottom: 20px;
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 15px 0;
+      padding: 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #2c2c2c;
+      color: #fff;
+      transform: translateX(5px);
+    }
+
+    /* Conteúdo principal */
+    .content {
+      margin-left: 240px;
+      padding: 40px;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 80px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #e2b714;
     }
 
     p {
-      margin-bottom: 15px;
+      font-size: 1.1rem;
       line-height: 1.6;
-    }
-
-    ul li {
-      list-style: none;
-      margin-bottom: 8px;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-  <div id="intro" class="fade-in container">
-    <h1>Os Portões da Névoa Negra se abriram...</h1>
-    <p>Shadows of the Last God</p>
-    <button class="btn" onclick="entrarNoReino()">Entrar no Reino</button>
-  </div>
 
-  <div id="reino" class="hidden container">
-    <h1>A Lenda do Último Deus</h1>
-    <p>
-      Há muito tempo, antes mesmo da luz tocar as montanhas esquecidas, o Último Deus caminhava entre as sombras.
-      Com ele vieram os Colossus — entidades vivas de pedra e fúria, guardiões de um pacto antigo.
-    </p>
-    <p>
-      Um a um, eles tombaram, selando o próprio Deus em um abismo de névoa. Mas agora, algo despertou.
-      Um chamado ecoa pelas ruínas... E os portões se abriram.
-    </p>
+  <nav>
+    <h1>🌑 Shadows</h1>
+    <a href="#historia">📜 História</a>
+    <a href="#lenda">👁️ A Lenda</a>
+    <a href="#colossos">🗿 Colossos</a>
+    <a href="https://discord.gg/ZxfhdGZb" target="_blank">👑 Entrar no Reino</a>
+  </nav>
 
-    <h2>Colossos Antigos</h2>
-    <ul>
-      <li>✦ Val’Gorath — O Guardião da Névoa</li>
-      <li>✦ Eryndra — A Rainha de Ossos</li>
-      <li>✦ Morvak — O Devorador de Lamentos</li>
-      <li>✦ Nyros — O Olho da Eternidade</li>
-    </ul>
+  <div class="content">
+    <section id="historia">
+      <h2>📜 História</h2>
+      <p>No coração do reino esquecido, um deus foi selado pelas sombras do tempo. Agora, ecos de sua fúria sussurram pelas ruínas antigas...</p>
+    </section>
 
-    <h2>Junte-se à Resistência</h2>
-    <p>Entre em nosso servidor do Discord e lute pela última chama.</p>
-    <a href="https://discord.gg/ZxfhdGZb" target="_blank" class="btn">Entrar no Discord</a>
+    <section id="lenda">
+      <h2>👁️ A Lenda</h2>
+      <p>Dizem que a Névoa Negra guardava os segredos da eternidade. Apenas os escolhidos ouvirão o chamado e enfrentarão os horrores que dormem sob a terra amaldiçoada.</p>
+    </section>
+
+    <section id="colossos">
+      <h2>🗿 Colossos</h2>
+      <p>Gigantes esquecidos caminham nas planícies sombrias. Cada um guarda um fragmento do último deus — derrotá-los é renascer ou desaparecer.</p>
+    </section>
   </div>
 
   <script>
-    function entrarNoReino() {
-      document.getElementById("intro").classList.add("hidden");
-      document.getElementById("reino").classList.remove("hidden");
+    // Animação ao rolar
+    const sections = document.querySelectorAll('section');
+
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+          sec.classList.add('visible');
+        }
+      });
     }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
   </script>
+
 </body>
 </html>
-
