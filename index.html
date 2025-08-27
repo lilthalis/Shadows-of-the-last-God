@@ -1,36 +1,386 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadows of the Last God</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shadow of the Last God</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --dark-bg: #0a0a16;
+            --darker-bg: #050510;
+            --gold: #d4af37;
+            --dark-gold: #b8941f;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--darker-bg);
+            color: var(--text);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23111125" width="100" height="100"/><path fill="%2315152e" d="M0 0L100 100M100 0L0 100"/></svg>');
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-family: 'Times New Roman', serif;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0c0;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        /* Menu de Navegação */
+        .main-menu {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            padding: 15px 30px;
+            background: linear-gradient(to bottom, #1a1a2e, #0f0f1f);
+            border: 1px solid #33334d;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item:hover {
+            background: linear-gradient(to bottom, #2a2a4e, #1a1a3e);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item.active {
+            background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
+            color: #000;
+            font-weight: bold;
+            border-color: var(--gold);
+        }
+
+        .menu-item i {
+            margin-right: 10px;
+        }
+
+        /* Conteúdo das Seções */
+        .content-section {
+            display: none;
+            background: rgba(10, 10, 30, 0.8);
+            border: 1px solid #33334d;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #33334d;
+        }
+
+        .section-content {
+            line-height: 1.6;
+        }
+
+        .section-content p {
+            margin-bottom: 15px;
+        }
+
+        /* Cards para projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid #33334d;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        /* Formulário de contato */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid #33334d;
+            border-radius: 5px;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: linear-gradient(to bottom, var(--gold), var(--dark-gold));
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #33334d;
+            color: #777;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .main-menu {
+                flex-direction: column;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="fog"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">SHADOW OF THE LAST GOD</h1>
+            <p class="subtitle">Um mundo de escuridão e mistério aguarda</p>
+        </header>
 
-    <aside class="menu">
-        <!-- Conteúdo do menu aqui -->
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="https://discord.gg/" target="_blank">Discord</a></li>
-            </ul>
+        <nav class="main-menu">
+            <div class="menu-item active" data-target="inicio">
+                <i class="fas fa-home"></i> Início
+            </div>
+            <div class="menu-item" data-target="projetos">
+                <i class="fas fa-project-diagram"></i> Projetos
+            </div>
+            <div class="menu-item" data-target="comunidade">
+                <i class="fas fa-users"></i> Comunidade
+            </div>
+            <div class="menu-item" data-target="sobre">
+                <i class="fas fa-info-circle"></i> Sobre
+            </div>
+            <div class="menu-item" data-target="contato">
+                <i class="fas fa-envelope"></i> Contato
+            </div>
         </nav>
-    </aside>
 
-    <main>
-        <h1 class="fade-title">Shadow of the Last God, onde os portões se abrem apenas para os mais corajosos.</h1>
-        <p>Esse é um espaço digital sombrio, feito com o intuito de mostrar a minha estética favorita, mais conhecida como Dark Fantasy.</p>
-    </main>
+        <main>
+            <section id="inicio" class="content-section active">
+                <h2 class="section-title">Bem-vindo ao Shadow of the Last God</h2>
+                <div class="section-content">
+                    <p>Entre em um mundo de escuridão, mistério e divindades esquecidas. Shadow of the Last God é um projeto imersivo que combina elementos de fantasia sombria com mitologia lovecraftiana.</p>
+                    <p>Explore nosso universo, descubra os segredos dos Deuses Antigos e junte-se a uma comunidade de entusiastas do horror cósmico e fantasia épica.</p>
+                    <p>Navegue pelo menu acima para descobrir nossos projetos, participar da comunidade e saber mais sobre nossa jornada.</p>
+                </div>
+            </section>
 
-   <section id="sobre">Oque é Dark Fantasy?</section>
-    <section id="projetos">Aqui mostro alguns projetos, em questão de algumas musicas que eu trabalho e queria demostrar nesse espaço.</section>
-    <section id="contato">Aqui, alem do link do Discord proprio, ficara meu ig, passem la para me seguir </section>
+            <section id="projetos" class="content-section">
+                <h2 class="section-title">Nossos Projetos</h2>
+                <div class="section-content">
+                    <p>Descubra os trabalhos que estamos desenvolvendo no universo de Shadow of the Last God:</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Livro de Contos</h3>
+                            <p>Uma coletânea de histórias curtas que exploram o universo e a mitologia por trás do Last God.</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3>RPG de Mesa</h3>
+                            <p>Sistema de RPG próprio para aventuras no mundo sombrio de nosso universo.</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3>Websérie Animada</h3>
+                            <p>Uma série em desenvolvimento que trará vida às histórias e personagens.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <script src="script.js"></script>
+            <section id="comunidade" class="content-section">
+                <h2 class="section-title">Comunidade</h2>
+                <div class="section-content">
+                    <p>Junte-se à nossa comunidade de entusiastas e contribua para o crescimento deste universo:</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3><i class="fab fa-discord"></i> Discord</h3>
+                            <p>Participe de nossas discussões, eventos e sessões de RPG online.</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3><i class="fab fa-reddit"></i> Subreddit</h3>
+                            <p>Compartilhe teorias, artes e discussões sobre o universo.</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h3><i class="fas fa-pencil-alt"></i> Contribuições</h3>
+                            <p>Envie suas próprias histórias e conceitos para o universo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre" class="content-section">
+                <h2 class="section-title">Sobre o Shadow of the Last God</h2>
+                <div class="section-content">
+                    <p>Shadow of the Last God começou como um projeto independente de ficção sombria, criado por entusiastas de horror cósmico e fantasia épica.</p>
+                    <p>Nossa missão é criar um universo rico e imersivo onde os fãs possam não apenas consumir histórias, mas também participar ativamente de sua construção.</p>
+                    <p>O projeto é desenvolvido colaborativamente, com contribuições de escritores, artistas e designers de todo o mundo.</p>
+                </div>
+            </section>
+
+            <section id="contato" class="content-section">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="section-content">
+                    <p>Tem perguntas, sugestões ou quer colaborar conosco? Entre em contato:</p>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" placeholder="Seu nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" placeholder="Seu e-mail">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" placeholder="Sua mensagem"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Shadow of the Last God &copy; 2023 - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script>
+        // Navegação entre as seções
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Remove a classe active de todos os itens do menu e seções
+                    menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    
+                    // Adiciona a classe active ao item clicado e à seção correspondente
+                    this.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+            
+            // Simula o envio do formulário
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Mensagem enviada! Entraremos em contato em breve.');
+                    form.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>
